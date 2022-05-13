@@ -1,13 +1,25 @@
 FROM node:16
 
-WORKDIR /firma_docs_ms
+# Create app directory
+WORKDIR /usr/src/app
 
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
-
 RUN npm install
 
+# Install TS
+RUN npm install -g typescript
+COPY tsconfig.json ./
 COPY . .
 
+# Set the server port
 ENV PORT=3000
+EXPOSE 3000
 
-EXPOSE 8080
+# Build:
+RUN npx tsc
+
+# Launch:
+CMD ["yarn", "run", "watch"]
