@@ -3,23 +3,22 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
+COPY ./src ./src
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
-RUN npm install
+RUN yarn install
 
-# Install TS
-RUN npm install -g typescript
+# Install TS compiler
+RUN yarn global add typescript
 COPY tsconfig.json ./
-COPY . .
-
-# Set the server port
-ENV PORT=3000
-EXPOSE 3000
-
-# Build:
 RUN npx tsc
 
+# Set the container port
+ENV PORT=8091
+
+EXPOSE 8091
 # Launch:
-CMD ["yarn", "run", "watch"]
+CMD ["yarn", "run", "start"]
