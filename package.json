@@ -1,27 +1,18 @@
 {
-  "name": "swarch",
+  "name": "typescript-mongodb-tutorial",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "NikcQ",
   "license": "MIT",
-  "dependencies": {
-    "@types/express": "^4.16.0",
-    "@types/mongoose": "^5.11.97",
-    "amqplib": "^0.9.0",
-    "body-parser": "^1.20.0",
-    "concurrently": "^3.5.1",
-    "express": "^4.17.3",
-    "mongoose": "^6.3.0",
-    "nodemon": "^2.0.15"
-  },
   "scripts": {
-    "build": "tsc -b --verbose",
-    "start": "node dist/app.js",
     "watch-ts": "tsc -w",
     "watch-node": "nodemon dist/app.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
   },
-  "devDependencies": {
-    "@types/amqplib": "^0.8.2"
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "@types/mongoose": "^5.5.12",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
   }
 }

@@ -1,17 +1,22 @@
-import * as express from "express";
-import * as docController from './controllers/docController';
-import * as bodyParser from 'body-parser';
+import express, { Request, Response } from "express";
 
+import * as docController from "./controllers/docController";
+
+// Our Express APP config
 const app = express();
+app.use(express.json());
 app.set("port", process.env.PORT || 3000);
-//app.set("port", 3000);
 
-app.use(bodyParser.json());
+// API Endpoints
+app.get("/", (req: Request, res: Response) => res.send("hi"))
 
-app.get('/docs', docController.allDocs);
-app.post('/docs/:id', docController.addDoc);
-app.delete('/docs', docController.deleteDoc);
+// API Endpoints
+app.get("/docs", docController.allDocs);
+app.get("/docs/:id", docController.getDoc);
+app.post("/docs", docController.addDoc);
+app.put("/docs/:id", docController.updateDoc);
+app.delete("/docs/:id", docController.deleteDoc);
 
-app.listen(app.get("port"), () => {
-    console.log("App is runing on http://localhost:%d", app.get("port"))
-})
+const server = app.listen(app.get("port"), () => {
+  console.log("App is running on http://localhost:%d", app.get("port"));
+});

@@ -1,21 +1,14 @@
 {
   "compilerOptions": {
+    /* Basic Options */
+    "target": "es5",
     "module": "commonjs",
-    "esModuleInterop": false,
-    "target": "es6",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*":[
-        "node_modules",
-        "src/types/*"
-      ]
-    }
-  },
-  "include": [
-    "src/**/*"
-  ]
+    "outDir": "./dist",
+    /* Strict Type-Checking Options */
+    "strict": true,      
+    "esModuleInterop": true,
+    /* Source Map Options */
+    "sourceRoot": "./src",
+    "inlineSourceMap": true
+  }
 }
