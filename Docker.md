@@ -1,7 +1,7 @@
 # Docker
 
 ## Development
-Para correr con ` Dockerfile.dev`:
+Para correr con `Dockerfile.dev`:
 ```bash
 docker rm -f node.dev
 docker build -t node.dev . -f Dockerfile.dev
@@ -20,7 +20,7 @@ kill -2 $PID
 ```
 
 ## Production
-Para correr con ` Dockerfile.prod`:
+Para correr con `Dockerfile.prod`:
 ### Para correr con RUN
 ```bash
 docker rm -f node.prod
@@ -34,9 +34,9 @@ sudo nsenter -t $(docker inspect -f '{{.State.Pid}}' node.prod) -n netstat -tulp
 ```
 
 ### Para correr con COMPOSE
-Para correr con ` docker-compose.yml`:
+Para correr con `docker-compose.yml`:
 ```bash
 docker-compose --project-name "firma" build
 docker-compose --project-name "firma" up --detach
-docker exec -it docs_ms /bin/bash
+docker exec -it firma_docs_ms /bin/bash
 ```
