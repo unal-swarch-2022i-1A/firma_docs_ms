@@ -1,2 +1,5 @@
 node_modules
-README.md
+*.md
+Dockerfile.dev
+Dockerfile.prod
+.env.docker

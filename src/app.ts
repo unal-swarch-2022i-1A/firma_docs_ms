@@ -2,11 +2,13 @@ import express, { Request, Response } from "express";
 
 import * as docController from "./controllers/docController";
 
+import 'dotenv/config'
+console.log("APP PORT:",process.env.PORT) 
+
 // Our Express APP config
 const app = express();
 app.use(express.json());
 app.set("port", process.env.PORT || 8091);
-
 // API Endpoints
 app.get("/", (req: Request, res: Response) => res.send("hi"))
 
