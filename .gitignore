@@ -105,3 +105,6 @@ dist
 
 # Locks
 package-lock.json
+
+# Variables de entorno
+.env

@@ -31,7 +31,7 @@ var docController = __importStar(require("./controllers/docController"));
 // Our Express APP config
 var app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8091);
 // API Endpoints
 app.get("/", function (req, res) { return res.send("hi"); });
 // API Endpoints

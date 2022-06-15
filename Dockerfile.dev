@@ -16,6 +16,8 @@ RUN yarn global add typescript
 RUN yarn
 
 # Set the server port
-ENV PORT=3000
-EXPOSE 3000
+ENV PORT=8091
+EXPOSE 8091
+
+ENTRYPOINT [ "yarn", "run" ]
 
