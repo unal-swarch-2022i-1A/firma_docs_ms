@@ -1,5 +1,5 @@
 node_modules
 *.md
 Dockerfile.dev
-Dockerfile.prod
+Dockerfile
 .env.docker

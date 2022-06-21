@@ -28,11 +28,11 @@ kill -2 $PID
 ```
 
 ## Production
-Para correr con `Dockerfile.prod`:
+Para correr con `Dockerfile`:
 ### Para correr con RUN
 ```bash
 docker rm -f firma_docs_ms
-docker build -t firma_docs_ms . -f Dockerfile.prod
+docker build -t firma_docs_ms . -f Dockerfile
 docker run -it -d \
     --name firma_docs_ms \
     -v $(pwd):/usr/src/app \
