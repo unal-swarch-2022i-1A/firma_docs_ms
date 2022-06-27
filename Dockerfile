@@ -6,6 +6,7 @@ LABEL org.opencontainers.image.source https://github.com/unal-swarch-2022i-1A/fi
 WORKDIR /usr/src/app
 
 COPY ./src ./src
+COPY ./.env.docker ./.env
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied

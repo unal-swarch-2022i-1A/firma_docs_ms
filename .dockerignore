@@ -2,4 +2,3 @@ node_modules
 *.md
 Dockerfile.dev
 Dockerfile
-.env.docker
