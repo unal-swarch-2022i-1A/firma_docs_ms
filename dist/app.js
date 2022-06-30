@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var docController = __importStar(require("./controllers/docController"));
+var docController = __importStar(require("./application/docController"));
 require("dotenv/config");
 console.log("APP PORT:", process.env.PORT);
 // Our Express APP config

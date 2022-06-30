@@ -1,13 +1,14 @@
 // controllers/bookController.ts
 import { Request, Response } from "express";
-import Doc from "./../doc";
+import DocService from "../data/docService";
 
 // We'll start with allBooks which will return
 // every we have from our database
 export let allDocs = (req: Request, res: Response) => {
-  let docs = Doc.find((err: any, docs: any) => {
+  let docs = DocService.find((err: any, docs: any) => {
+    console.log("DocService.find:",docs)
     if (err) {
-      res.send("Error!");
+      res.send(err);
     } else {
       res.send(docs);
     }
@@ -15,7 +16,8 @@ export let allDocs = (req: Request, res: Response) => {
 };
 
 export let getDoc = (req: Request, res: Response) => {
-    let doc = Doc.findById(req.params.id, (err: any, doc: any) => {
+    let doc = DocService.findById(req.params.id, (err: any, doc: any) => {
+        console.log("DocService.findById:",res)
         if (err) {
             res.send(err);
         } else {
@@ -25,7 +27,7 @@ export let getDoc = (req: Request, res: Response) => {
 };
 
 export let deleteDoc = (req: Request, res: Response) => {
-    let doc = Doc.deleteOne({ _id: req.params.id }, (err: any) => {
+    let doc = DocService.deleteOne({ _id: req.params.id }, (err: any) => {
         if (err) {
             res.send(err);
         } else {
@@ -36,7 +38,7 @@ export let deleteDoc = (req: Request, res: Response) => {
 
 export let updateDoc = (req: Request, res: Response) => {
     console.log(req.body);
-    let doc = Doc.findByIdAndUpdate(
+    let doc = DocService.findByIdAndUpdate(
         req.params.id,
         req.body,
         (err: any, doc: any) => {
@@ -50,7 +52,7 @@ export let updateDoc = (req: Request, res: Response) => {
 };
 
 export let addDoc = (req: Request, res: Response) => {
-    var doc = new Doc(req.body);
+    var doc = new DocService(req.body);
     console.log(req.body);
     console.log(doc);
     doc.save((err: any) => {

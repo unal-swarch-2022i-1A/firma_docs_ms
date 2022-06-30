@@ -19,9 +19,6 @@ RUN yarn global add typescript
 COPY tsconfig.json ./
 RUN npx tsc
 
-# Set the container port
-ENV PORT=8091
-
 EXPOSE 8091
 # Launch:
 CMD ["yarn", "run", "start"]

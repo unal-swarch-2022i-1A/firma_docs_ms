@@ -8,7 +8,7 @@ docker rm -f firma_docs_dev && \
 docker run -it -d \
     --name firma_docs_dev \
     -v $(pwd):/usr/src/app \
-    -p 8091:8091  \
+    -p 3001:3001  \
     --add-host=host.docker.internal:host-gateway \
     firma_docs_ms:dev \
     watch && \

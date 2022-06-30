@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 
-import * as docController from "./controllers/docController";
+import * as docController from "./application/docController";
 
 import 'dotenv/config'
 console.log("APP PORT:",process.env.PORT) 
